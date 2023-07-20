@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cadastro - Site de Apostas</title>
+  <style>
+    /* Estilos gerais */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .background-images {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: url("./assests/01.avif");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .content-modal-win {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .btn-modal-win {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .btn-tab {
+      padding: 10px 20px;
+      background-color: #f2f2f2;
+      cursor: pointer;
+    }
+
+    .btn-tab span {
+      font-weight: bold;
+    }
+
+    .btn-tab.isActive {
+      background-color: #ccc;
+    }
+
+    .deposit-section {
+      display: none;
+    }
+
+    .deposit-section.active {
+      display: block;
+    }
+
+    .form-modal-win {
+      padding: 20px;
+      background-color: #f2f2f2;
+      max-width: 600px;
+      margin: 0 auto;
+      border-radius: 5px;
+      text-align: center; /* Centraliza o conteúdo */
+    }
+
+    .form-modal-win h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .new-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .inputError {
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    .btn-submit {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-images"></div>
+
+  <div class="content-modal-win"> <!-- Adicionado o seletor content-modal-win -->
+    <div class="deposit-section tab active" data-type="deposit">
+      <div class="form-modal-win login-form">
+        <h2>Cadastro</h2>
+        <div id="inputErrorReg-others" class="inputError"></div>
+        <div class="one-form-modal-win">
+          <input type="text" class="new-input" name="usernameInput" id="usernameInput" autocomplete="off" placeholder="Nome de Usuário" required>
+          <div id="inputErrorReg-username" class="inputError"></div>
+        </div>
+        <div class="one-form-modal-win">
+          <input type="text" class="new-input" name="first_nameInput" id="first_nameInput" autocomplete="off" placeholder="Primeiro Nome" required>
+          <div id="inputErrorReg-first_name" class="inputError"></div>
+        </div>
+        <div class="one-form-modal-win">
+          <input type="text" class="new-input" name="last_nameInput" id="last_nameInput" autocomplete="off" placeholder="Sobrenome" required>
+          <div id="inputErrorReg-last_name" class="inputError"></div>
+        </div>
+        <div class="one-form-modal-win">
+          <input type="text" class="new-input" name="number_smsInput" id="number_smsInput" autocomplete="off" placeholder="Número Celular" required>
+          <div id="inputErrorReg-number_sms" class="inputError"></div>
+        </div>
+        <div class="one-form-modal-win">
+          <input type="email" class="new-input" name="emailInputReg" id="emailInputReg" autocomplete="off" placeholder="E-mail para acesso" required>
+          <div id="inputErrorReg-email" class="inputError"></div>
+        </div>
+        <div class="one-form-modal-win">
+          <input type="password" class="new-input" name="passwordInputReg" id="passwordInputReg" autocomplete="off" placeholder="Senha para acesso" required>
+          <div id="inputErrorReg-password" class="inputError"></div>
+        </div>
+        <button id="registerNewAccount" class="btn-submit">
+          Cadastrar
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
